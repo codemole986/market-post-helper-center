@@ -284,14 +284,10 @@ class MPH_Center {
         if (!$mph_center_messages)  $mph_center_messages = array();
 
         for ($i=0; $i<count($posts); $i++) {
-            $post = array(
-                'post_title' => $title,
-                'post_content' => $cont,
-                'post_excerpt' => '',
-            );
+            $post = $posts[$i];
 
             $mph_result = $this->publish_to_others_proceed($post, '', $mph_center_messages);
-            $mph_center_messages = $mph_result['msg'];
+            $mph_center_messages[] = $mph_result['msg'];
         }
 
         if (count($mph_center_messages) > 0) {
@@ -325,7 +321,7 @@ class MPH_Center {
 
             $mph_result = $this->publish_to_others_proceed($post, '', $mph_center_messages);
 
-            $mph_center_messages = $mph_result['msg'];
+            $mph_center_messages[] = $mph_result['msg'];
         }
 
         if (count($mph_center_messages) > 0) {
