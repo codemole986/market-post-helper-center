@@ -144,8 +144,8 @@ class MPH_API {
 			$this->error = $error;
 		}
 
-		echo $error;
-		echo $response;
+		// echo $error;
+		// echo $response;
 
 
 		return $response;
