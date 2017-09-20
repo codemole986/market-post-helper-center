@@ -32,7 +32,7 @@ class MPH_API {
 		$hash = hash('sha256', $str);
 
 		$url = $website . '/wp-admin/admin-ajax.php?action=mph_meta&i=' . $id . '&h=' . $hash . '&dt=' . urlencode($dateV);
-		echo $url . "\n";
+		// echo $url . "\n";
 		return json_decode($this->curl($url), true);
 	}
 
